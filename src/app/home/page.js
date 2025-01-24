@@ -7,7 +7,7 @@ const HomePage = async () => {
 
     return (
       <div>
-        <ul className="grid grid-cols-4 items-center justify-center gap-5 text-center mt-20">
+        <ul className="grid md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-5 text-center mt-20">
           {data.map((item) => (
             <>
               <Link href={`/home/${item.id}`}>
@@ -21,7 +21,7 @@ const HomePage = async () => {
             </>
           ))}
         </ul>
-        <div className="text-center mt-14">
+        <div className="text-center mt-14 mb-10">
           <button className="btn bg-[#BFDBFE] rounded-none">View More</button>
         </div>
       </div>

@@ -53,7 +53,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <ul className="flex items-center gap-5">
+                <ul className="flex items-center gap-10">
                     <li>
                         <LoginLink>Sign in</LoginLink>
                     </li>
