@@ -32,12 +32,6 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <LoginLink>Sign in</LoginLink>
-                        </li>
-                        <li>
-                            <RegisterLink>Sign up</RegisterLink>
-                        </li>
-                        <li>
                             <Link href="/profile">
                                 Profile
                             </Link>
@@ -53,43 +47,23 @@ const Navbar = () => {
                             Home
                         </Link>
                     </li>
-                        {
-                            isAuthenticated ? <>
-                                <li>
-                                    <LogoutLink>Log out</LogoutLink>
-                                </li>
-                                <li>
-                                    <Link href="/profile">Profile</Link>
-                                </li>
-                            </>
-                                :
-                                <>
-                                    <li>
-                                        <LoginLink>Sign in</LoginLink>
-                                    </li>
-                                    <li>
-                                        <RegisterLink>Sign up</RegisterLink>
-                                    </li>
-                                </>
-                        }
-                    {/* <li>
-                        <LoginLink>Sign in</LoginLink>
-                    </li>
                     <li>
-                        <RegisterLink>Sign up</RegisterLink>
-                    </li> */}
-                    {/* <li>
-                        <LogoutLink>Log out</LogoutLink>
-                    </li> */}
-                    <li>
-                        <Link href="/profile">
-                            Profile
-                        </Link>
+                        <Link href="/profile">Profile</Link>
                     </li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <ul className="flex items-center gap-5">
+                    <li>
+                        <LoginLink>Sign in</LoginLink>
+                    </li>
+                    <li>
+                        <RegisterLink>Sign up</RegisterLink>
+                    </li>
+                    <li>
+                        <LogoutLink>Log out</LogoutLink>
+                    </li>
+                </ul>
             </div>
         </div>
     );
