@@ -1,9 +1,10 @@
+import HomePage from "./home/page";
 
-
-export default function Home() {
+export default async function Home() {
+  
   return (
     <main className="min-h-screen">
-      <p>Hello</p>
+      <HomePage></HomePage>
     </main>
   );
 }

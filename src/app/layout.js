@@ -24,10 +24,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-10/12 mx-auto py-5">
-          <Navbar></Navbar>
-          <div className="min-h-screen">{children}</div>
-          <Footer></Footer>
+        <div className="">
+          <div className="bg-[#BFDBFE] py-1">
+            <div className="w-10/12 mx-auto">
+              <Navbar></Navbar>
+            </div>
+          </div>
+          <div className="w-10/12 mx-auto min-h-screen">{children}</div>
+          <div className="w-10/12 mx-auto">
+            <Footer></Footer>
+          </div>
         </div>
       </body>
     </html>

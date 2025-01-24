@@ -1,8 +1,12 @@
+"use client"
 import Link from "next/link";
+import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
 
 const Navbar = () => {
+    const { isAuthenticated, user } = useKindeAuth();
     return (
-        <div className="navbar bg-base-100 p-0">
+        <div className="navbar p-0">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,9 +32,10 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/card">
-                                Card
-                            </Link>
+                            <LoginLink>Sign in</LoginLink>
+                        </li>
+                        <li>
+                            <RegisterLink>Sign up</RegisterLink>
                         </li>
                         <li>
                             <Link href="/profile">
@@ -48,11 +53,34 @@ const Navbar = () => {
                             Home
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/card">
-                            Card
-                        </Link>
+                        {
+                            isAuthenticated ? <>
+                                <li>
+                                    <LogoutLink>Log out</LogoutLink>
+                                </li>
+                                <li>
+                                    <Link href="/profile">Profile</Link>
+                                </li>
+                            </>
+                                :
+                                <>
+                                    <li>
+                                        <LoginLink>Sign in</LoginLink>
+                                    </li>
+                                    <li>
+                                        <RegisterLink>Sign up</RegisterLink>
+                                    </li>
+                                </>
+                        }
+                    {/* <li>
+                        <LoginLink>Sign in</LoginLink>
                     </li>
+                    <li>
+                        <RegisterLink>Sign up</RegisterLink>
+                    </li> */}
+                    {/* <li>
+                        <LogoutLink>Log out</LogoutLink>
+                    </li> */}
                     <li>
                         <Link href="/profile">
                             Profile
